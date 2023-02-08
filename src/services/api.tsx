@@ -3,7 +3,7 @@ import caller from "./helpers/caller";
 
 import { SessionStorage } from "../utils";
 
-const apiUrl = "https://api.ctgriscoscompliance.ianclive.com/";
+const apiUrl = "";
 
 const api = create({
   baseURL: apiUrl,
