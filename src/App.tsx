@@ -43,7 +43,6 @@ function App() {
   return !isLogged ? (
     <ThemeProvider theme={Theme.Light}>
       <Router>
-
         <div
           className={classes.pageContainer}
           style={{

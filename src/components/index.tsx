@@ -1,4 +1,4 @@
 
 import ThemeProvider from "./others/ThemeProvider";
-
-export { ThemeProvider }
+import FontStyles from "./styles/fontStyles";
+export { ThemeProvider, FontStyles }

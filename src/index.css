@@ -11,3 +11,42 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+
+@font-face {
+  font-family: "Montserrat SemiBold"; /*Can be any text*/
+  src: local("Montserrat-SemiBold"),
+    url("./assets/fonts/Montserrat-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Montserrat Bold"; /*Can be any text*/
+  src: local("Montserrat-Bold"),
+    url("./assets/fonts/Montserrat-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Montserrat Medium"; /*Can be any text*/
+  src: local("Montserrat-Medium"),
+    url("./assets/fonts/Montserrat-Medium.ttf") format("truetype");
+}
+
+
+@font-face {
+  font-family: "Montserrat Light"; /*Can be any text*/
+  src: local("Montserrat-Light"),
+    url("./assets/fonts/Montserrat-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Montserrat Regular"; /*Can be any text*/
+  src: local("Montserrat-Regular"),
+    url("./assets/fonts/Montserrat-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Montserrat Italic"; /*Can be any text*/
+  src: local("Montserrat-Italic"),
+    url("./assets/fonts/Montserrat-Italic.ttf") format("truetype");
+}
