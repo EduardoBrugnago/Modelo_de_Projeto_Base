@@ -32,17 +32,15 @@ function createLightTheme({
   inputBackgroundColor,
 }: any) {
   return createTheme({
-
     breakpoints: {
-      keys: ["xs",  "sm", "md", "lg", "xl",],
+      keys: ["xs", "sm", "md", "lg", "xl"],
       values: {
         xs: 0,
-      
+
         sm: 600,
         md: 960,
         lg: 1280,
         xl: 1600,
-    
       },
     },
     palette: {
@@ -61,20 +59,14 @@ function createLightTheme({
       text: {
         primary: textPrimaryColor,
         secondary: textSecondaryColor,
-       
+
         disabled: textPrimaryColor + 99,
         hint: textPrimaryColor,
-       
       },
       background: {
         paper: paperBackgroundColor,
-        
-       
+
         default: backgroundColor,
-     
-       
-       
-     
       },
       action: {
         active: textSecondaryColor,
@@ -89,13 +81,11 @@ function createLightTheme({
         focusOpacity: 0.12,
         activatedOpacity: 0.12,
       },
-   
     },
-   
+
     shape: {
       borderRadius: 4,
     },
-    
   });
 }
 

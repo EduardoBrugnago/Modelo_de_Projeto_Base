@@ -3,7 +3,7 @@ import { FontStyles } from "../../components";
 
 import { Spacing } from "../../config";
 
-const ImageBG = styled.div(({ $Image }) => {
+const ImageBG = styled.div(() => {
   return {
     display: "flex",
     width: "100%",
@@ -11,10 +11,6 @@ const ImageBG = styled.div(({ $Image }) => {
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-
-    backgroundImage: $Image,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
   };
 });
 
@@ -35,7 +31,6 @@ const Content = styled.div(({ theme }) => {
     width: spacing(72.5),
     maxHeight: spacing(85.5),
     height: "85%",
-
   };
 });
 
@@ -46,11 +41,10 @@ const Header = styled.div(() => {
     display: "flex",
     alignSelf: "center",
     justifyContent: "flex-start",
-  
   };
 });
 
-const Title = styled.p(({theme}) => {
+const Title = styled.p(({ theme }) => {
   const { spacing, palette: colors } = theme;
   return {
     color: colors.blue,
@@ -58,11 +52,10 @@ const Title = styled.p(({theme}) => {
     textAlign: "left",
     ...FontStyles.bold22,
     textTransform: "uppercase",
-
   };
 });
 
-const Subtitle = styled.p(({theme}) => {  
+const Subtitle = styled.p(({ theme }) => {
   const { spacing, palette: colors } = theme;
   return {
     color: colors.grayText,
@@ -79,7 +72,7 @@ const CTGLogo = styled.img(() => {
   };
 });
 
-const ForgotPasswordButton = styled.p(({theme}) => {  
+const ForgotPasswordButton = styled.p(({ theme }) => {
   const { spacing, palette: colors } = theme;
   return {
     textAlign: "right",

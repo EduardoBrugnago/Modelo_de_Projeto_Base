@@ -1,4 +1,19 @@
-
 import ThemeProvider from "./others/ThemeProvider";
 import FontStyles from "./styles/fontStyles";
-export { ThemeProvider, FontStyles }
+
+import ButtonContained from "./buttons/ButtonContained";
+import ButtonOutlined from "./buttons/ButtonOutlined";
+import ButtonText from "./buttons/ButtonText";
+import Input from "./inputs/Input";
+import InputEmail from "./inputs/InputEmail";
+import InputPassword from "./inputs/InputPassword";
+export {
+  ThemeProvider,
+  FontStyles,
+  InputPassword,
+  InputEmail,
+  Input,
+  ButtonText,
+  ButtonOutlined,
+  ButtonContained,
+};

@@ -40,7 +40,7 @@ function App() {
     }
   }, [menuHeight]);
 
-  return !isLogged ? (
+  return isLogged ? (
     <ThemeProvider theme={Theme.Light}>
       <Router>
         <div

@@ -5,14 +5,14 @@ import {
   ButtonContained,
   InputEmail,
   InputPassword,
-} from "../../genericComponents";
+} from "../../components/index";
 import Styles from "./LoginStyles";
 import { FormFull } from "form-full";
 import { validations } from "../../utils";
 import { hooks, SessionStorage } from "../../utils";
 import { StorageContext } from "../../contexts/StorageContext";
 //import packageJson from "../../../package.json";
-import images from "../../config/images";
+
 import { api } from "../../services";
 import { paths } from "../../navigation/navigate";
 
@@ -21,7 +21,7 @@ function Login() {
   //const version = packageJson.version;
   const navigate = useNavigate();
   const { loading, call } = hooks.useRequest();
-  const { addData, setIsLogged } = useContext(StorageContext);
+  const { addData, setIsLogged } = useContext<any>(StorageContext);
   const Submit = async (data) => {
     call(null, api.getToken(data), (response) => {
       if (response.ok) {
@@ -38,14 +38,12 @@ function Login() {
   const [buttonDisabled, setButton] = React.useState(true);
 
   return (
-    <Styles.ImageBG $Image={`url(${images.LoginBackground})`}>
+    <Styles.ImageBG>
       <FormFull onSubmit={Submit}>
         <Styles.Content>
-          <Styles.Header>
-            <Styles.CTGLogo src={images.LogoCTG} />
-          </Styles.Header>
+          <Styles.Header></Styles.Header>
           <Styles.Title>{texts.title}</Styles.Title>
-          <Styles.Subtitle>{texts.subTitle}</Styles.Subtitle>
+
           <InputEmail
             name="username"
             label={texts.user}
@@ -66,8 +64,9 @@ function Login() {
           <Styles.P>*Campo obrigatório</Styles.P>
           <Styles.ButtonContainer>
             <Styles.ForgotPasswordButton
-              onClick={() => navigate(paths.forgetPassword)}>
-              {texts.forgotPassword}
+              onClick={() => navigate(paths.forgetPassword)}
+            >
+              {texts.forgotPass}
             </Styles.ForgotPasswordButton>
           </Styles.ButtonContainer>
           <ButtonContained
