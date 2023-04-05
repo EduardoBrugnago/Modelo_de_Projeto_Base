@@ -6,6 +6,9 @@ import Styles from "./EsqueceuSenhaStyles";
 
 import { hooks } from "../../utils";
 import StepEmail from "./Steps/StepEmail";
+import StepCode from "./Steps/StepCode";
+import { customModal } from "../../components/modals/utils";
+import StepPassword from "./Steps/StepPassword";
 
 function EsqueceuSenha() {
   const texts = ptBr.login;
@@ -16,28 +19,72 @@ function EsqueceuSenha() {
   const Submit = async (data) => {};
 
   const FinishStepOne = async (data, Callback) => {
+    console.log(data);
     setFormData({ ...formData, ...data });
     Callback();
   };
 
+  const FinishStepTwo = async (data, Callback) => {
+    console.log(data);
+    setFormData({ ...formData, ...data });
+    Callback();
+  };
+
+  const FinishStepThree = async (data) => {
+    console.log(data);
+    setFormData({ ...formData, ...data });
+    customModal.setInfos(
+      "NOVA SENHA CADASTRADA",
+      [
+        "Você criou sua nova senha com sucesso! Acesse sua conta agora mesmo a partir da tela de Login.",
+      ],
+      {
+        onClick: () => {
+          navigate("/");
+          customModal.close();
+        },
+        label: "IR PARA LOGIN",
+      },
+      null,
+      null,
+      true
+    );
+  };
+
   return (
     <Styles.ImageBG>
-      <Styles.CardContent>
-        <Swiper
-          screens={[
-            ({ goNext }) => (
-              <StepEmail
-                loading={loading}
-                onSubmit={(data) => {
-                  FinishStepOne(data, goNext);
-                }}
-                goBack={() => navigate("/")}
-              />
-            ),
-            ({ goNext }) => <p>Teste</p>,
-          ]}
-        />
-      </Styles.CardContent>
+      <Swiper
+        screens={[
+          ({ goNext }) => (
+            <StepEmail
+              loading={loading}
+              onSubmit={(data) => {
+                FinishStepOne(data, goNext);
+              }}
+              goBack={() => navigate("/")}
+            />
+          ),
+          ({ goNext, goPrevious }) => (
+            <StepCode
+              loadingOut={loading}
+              onSubmit={(data) => {
+                FinishStepOne(data, goNext);
+              }}
+              goBack={() => goPrevious()}
+              sendCode={() => {}}
+            />
+          ),
+          ({ goNext, goPrevious }) => (
+            <StepPassword
+              onSubmit={(data) => {
+                FinishStepThree(data);
+              }}
+              goBack={() => goPrevious()}
+              loading={loading}
+            />
+          ),
+        ]}
+      />
     </Styles.ImageBG>
   );
 }

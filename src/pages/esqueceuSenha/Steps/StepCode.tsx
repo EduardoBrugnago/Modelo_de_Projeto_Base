@@ -2,7 +2,7 @@ import React from "react";
 
 import ptBr from "../../../config/texts/pt-br";
 
-import { ButtonContained, ButtonText, CustomText } from "../../../components";
+import { ButtonContained, ButtonText } from "../../../components";
 import Styles from "../EsqueceuSenhaStyles";
 import { FormFull } from "form-full";
 import { hooks } from "../../../utils";
@@ -16,51 +16,24 @@ interface PageProps {
   goBack: () => void;
   onSubmit: (data: any) => void;
   loadingOut: () => void;
-  sendCode: () => void;
+  sendCode?: () => void;
 }
 
 function StepCode({ onSubmit, goBack, loadingOut, sendCode }) {
   const texts = ptBr.forgetPassword;
 
   const [ref, setRef] = React.useState<any>(null);
-  const [timer, setTimer] = React.useState(90);
 
   const inputRef = React.useRef<any>();
   const [value, setValue] = React.useState("");
 
   const { loading, call } = hooks.useRequest();
 
-  React.useEffect(() => {
-    function minusOneSec() {
-      setTimer(timer - 1);
-    }
-    if (timer >= 0) {
-      setTimeout(function () {
-        minusOneSec();
-      }, 1000);
-    }
-  }, [timer, setTimer]);
-
   const sendTokenData = () => {
     if (inputRef?.current) {
       const code = inputRef.current.state.value;
       onSubmit({ code: code });
     }
-  };
-
-  const ReSendCode = async (callback) => {
-    callback(2);
-    /*    customModal.setInfos(
-         "Código Enviado",
-         ["Um novo código foi enviado ao seu email"],
-         {
-           label: "OKAY",
-           onClick: () => {
-             customModal.close();
-           },
-         },
-         null
-       ); */
   };
 
   return (
@@ -100,15 +73,18 @@ function StepCode({ onSubmit, goBack, loadingOut, sendCode }) {
             />
           </Styles.MarginBottom>
         </div>
-        <ButtonContained
-          name="continue"
-          loading={loading || loadingOut}
-          feedback={true}
-          disabled={loading || value.length < 5 ? true : false}
-          onClick={() => sendTokenData(ref)}
-          label={texts.continue[1]}
-        />
-        <ButtonText onClick={() => goBack()}>{texts.onBack}</ButtonText>
+
+        <div>
+          <ButtonContained
+            name="continue"
+            loading={loading || loadingOut}
+            feedback={true}
+            disabled={loading || value.length < 5 ? true : false}
+            onClick={() => sendTokenData()}
+            label={texts.continue[1]}
+          />
+          <ButtonText onClick={() => goBack()}>{texts.onBack}</ButtonText>
+        </div>
       </Styles.Content>
     </FormFull>
   );

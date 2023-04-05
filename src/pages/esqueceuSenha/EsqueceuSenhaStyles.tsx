@@ -24,14 +24,24 @@ const Container = styled.div(({ theme }) => {
 });
 
 const Content = styled.div(({ theme }) => {
+  const { spacing, palette: colors } = theme;
   return {
     display: "flex",
     position: "relative",
     justifyContent: "space-between",
     flexDirection: "column",
-    height: '100%',
+
     overflow: "auto",
     textAlign: "left",
+    padding: spacing(6.25),
+    overflowX: "auto",
+
+    backgroundColor: colors.background.default,
+    borderRadius: spacing(1.1),
+
+    width: spacing(72.5),
+    maxHeight: spacing(85.5),
+    height: "85%",
   };
 });
 const CardContent = styled.div(({ theme }) => {
