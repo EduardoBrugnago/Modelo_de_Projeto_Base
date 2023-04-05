@@ -30,15 +30,10 @@ const ptBr = {
       buttonLabel: "Ok",
     },
   },
-  home:{
-   
-  },
-  pagesConfig: {
-  
-  },
+  home: {},
+  pagesConfig: {},
 
   login: {
-
     title: "LOGIN",
     remember: "Lembrar-me",
     forgotPass: "Esqueceu sua senha?",
@@ -50,24 +45,36 @@ const ptBr = {
     user: "Usuário",
     userMessage: baseRequiredMessage,
   },
-  forgotPass: {
-    title: "ESQUECEU SUA SENHA?",
-    subTitle:
-      "Efetue o processo de recuperação de sua senha informando seu email",
-    successResponse: "Senha alterada com sucesso.",
-    resendCode: "Reenviar código",
-    inputEmailLabel: "E-mail",
-    inputEmailRequiredMessage: baseRequiredMessage,
-    inputCodeLabel: "Código",
-    inputCodeRequiredMessage: baseRequiredMessage,
-    inputPasswordLabel: "Nova senha",
-    inputPasswordRequiredMessage: baseRequiredMessage,
-    inputConfirmPasswordLabel: "Confirme sua senha",
-    inputConfirmPasswordRequiredMessage: baseRequiredMessage,
-    submitEmailButton: "ENVIAR SOLICITAÇÃO",
-    submitCodeButton: "ENVIAR CÓDIGO",
-    submitPassButon: "TROCAR SENHA",
-    goBack: "VOLTAR",
+  forgetPassword: {
+    titleStepOne: "ESQUECEU SUA SENHA",
+    titleStepTwo: "ESQUECEU SUA SENHA",
+    titleStepTree: "ESQUECEU SUA SENHA",
+    titleStepFour: "Senha redefinida com sucesso",
+    subTitle: [
+      "Para sua recuperação de senha, informe seu email cadastrado abaixo:",
+      "Informe abaixo o código que enviamos para seu email cadastrado:",
+      "Crie sua nova senha informando os dados abaixo:",
+      "Sua senha foi redefinida com sucesso, vamos redirecionar você para a tela de login ou você pode clicar para voltar.",
+      "Senha redefinida",
+    ],
+    continue: [
+      "ENVIAR",
+      "VALIDAR CÓDIGO",
+      "CONFIRMAR NOVA SENHA",
+      "Fazer login",
+    ],
+    resendCode: "Reenviar código de confirmação",
+    forgotPassword: "Esqueci minha senha",
+    enter: "Entrar",
+    password: "NOVA SENHA",
+    onBackMenu: "Voltar para o login",
+    onBack: "VOLTAR",
+    cancel: "CANCELAR",
+    onNext: "Avançar",
+    nwPassword: "Confirmar Senha",
+    passwordMessage: baseRequiredMessage,
+    user: "EMAIL",
+    userMessage: baseRequiredMessage,
   },
   settings: {
     userSettings: {
@@ -86,7 +93,6 @@ const ptBr = {
         register: "Cadastrar",
         successResponse: "Usuário cadastrado com sucesso.",
       },
-     
     },
     changePassword: {
       changePassword: "Alterar Senha",
@@ -99,7 +105,6 @@ const ptBr = {
       confirm: "Confirmar",
     },
   },
-  
 };
 
 export default ptBr;

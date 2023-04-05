@@ -6,8 +6,12 @@ const pagesConfig = {
       navigationId: 0,
       path: paths.login,
       name: "Login",
-    }
-   
+    },
+    {
+      navigationId: 1,
+      path: paths.forgetPassword,
+      name: "EsqueceuSenha",
+    },
   ],
   logged: [
     {

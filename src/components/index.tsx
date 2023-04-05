@@ -7,6 +7,7 @@ import ButtonText from "./buttons/ButtonText";
 import Input from "./inputs/Input";
 import InputEmail from "./inputs/InputEmail";
 import InputPassword from "./inputs/InputPassword";
+import Swiper from "./others/Swiper";
 export {
   ThemeProvider,
   FontStyles,
@@ -16,4 +17,5 @@ export {
   ButtonText,
   ButtonOutlined,
   ButtonContained,
+  Swiper,
 };
