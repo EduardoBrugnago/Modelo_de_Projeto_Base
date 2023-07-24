@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import ptBr from "../../config/texts/pt-br";
 import {
   ButtonContained,
+  CustomText,
   InputEmail,
   InputPassword,
 } from "../../components/index";
@@ -11,14 +12,13 @@ import { FormFull } from "form-full";
 import { validations } from "../../utils";
 import { hooks, SessionStorage } from "../../utils";
 import { StorageContext } from "../../contexts/StorageContext";
-//import packageJson from "../../../package.json";
 
 import { api } from "../../services";
 import { paths } from "../../navigation/navigate";
 
 function Login() {
   const texts = ptBr.login;
-  //const version = packageJson.version;
+
   const navigate = useNavigate();
   const { loading, call } = hooks.useRequest();
   const { addData, setIsLogged } = useContext<any>(StorageContext);
@@ -78,7 +78,10 @@ function Login() {
             type="submit"
             label={texts.enter}
           />
-          {/* <CustomText>CTG Riscos - v{version}</CustomText> */}
+          <CustomText>
+            {process.env.REACT_APP_ENV + " v"}
+            {process.env.REACT_APP_VERSION}
+          </CustomText>
         </Styles.Content>
       </FormFull>
     </Styles.ImageBG>

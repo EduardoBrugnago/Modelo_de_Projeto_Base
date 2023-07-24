@@ -8,6 +8,7 @@ import Input from "./inputs/Input";
 import InputEmail from "./inputs/InputEmail";
 import InputPassword from "./inputs/InputPassword";
 import Swiper from "./others/Swiper";
+import CustomText from "./others/CustomText";
 export {
   ThemeProvider,
   FontStyles,
@@ -17,5 +18,5 @@ export {
   ButtonText,
   ButtonOutlined,
   ButtonContained,
-  Swiper,
+  Swiper,CustomText
 };

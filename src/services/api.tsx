@@ -3,7 +3,7 @@ import caller from "./helpers/caller";
 
 import { SessionStorage } from "../utils";
 
-const apiUrl = "";
+const apiUrl = process.env.REACT_APP_API;
 
 const api = create({
   baseURL: apiUrl,
